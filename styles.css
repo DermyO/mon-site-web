@@ -67,3 +67,52 @@ footer {
         height: 120px;
     }
 }
+.main-header {
+    display: flex; /* Active l'alignement horizontal */
+    align-items: center; /* Centre verticalement */
+    justify-content: space-between; /* Met de l'espace entre les logos et la photo */
+    background-color: #004466; /* Couleur de fond */
+    color: white; /* Texte blanc */
+    padding: 10px 20px; /* Espacement interne */
+}
+
+/* Zone des photos */
+.profile {
+    display: flex; /* Structure interne horizontalement */
+    flex-direction: column; /* Place photo et texte au-dessus/dessous */
+    align-items: center; /* Centre en horizontal */
+    text-align: center;
+}
+
+.profile-photo {
+    width: 100px; /* Taille de la photo */
+    height: 100px; /* Photo carrée */
+    border-radius: 50%; /* Cercle */
+    border: 2px solid white; /* Bordure blanche */
+    margin-bottom: 5px; /* Espacement entre photo et texte */
+}
+
+/* Logo à gauche et à droite */
+.logo-left img,
+.logo-right img {
+    height: 60px; /* Taille des logos */
+    width: auto; /* Conserve les proportions */
+}
+
+/* Logos sur de plus petits écrans */
+@media (max-width: 768px) {
+    .profile-photo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .logo-left img,
+    .logo-right img {
+        height: 40px; /* Réduction des tailles */
+    }
+}
+
+.title {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
