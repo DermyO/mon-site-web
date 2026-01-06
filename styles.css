@@ -1,30 +1,133 @@
+/* ===== styles.css - version unifiée et sûre ===== */
+
+/* Base */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
     color: #333;
-    background-color: #f6f8fa;
+    background-color: #EEF7FB;
 }
 
+/* Main header : logos aux extrémités + zone centrale */
 .main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
     background-color: #004466;
-    color: #fff;
-    padding: 20px;
+    color: white;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    position: relative;
+    overflow: visible; /* permet aux éléments de déborder sans être coupés */
+}
+
+/* Logos */
+.logo-left img,
+.logo-right img {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+/* Zone centrale du header (photo + infos) - centrée entre logos */
+.header-center {
+    display: flex;
+    align-items: center;
+    flex: auto auto auto;
+    justify-content: center;
+    min-width: 0;
+    flex-direction: column;
+}
+
+/* Ancienne structure .profile (toujours prise en charge) */
+.profile {
+    display: flex;
+    align-items: center;
     text-align: center;
 }
 
-.profile-photo {
-    width: 150px;
-    height: 150px;
+/* Photo principale (ancienne classe .profile-photo) - statique */
+.profile .profile-photo {
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
-    border: 3px solid #fff;
+    border: 2px solid white;
+    margin-bottom: 5px;
 }
 
-.title {
-    font-size: 1.2em;
-    margin: 5px 0;
+/* Wrapper pour la photo et les petites pastilles (nouvelle structure) */
+.head-wrap {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+/* Photo principale si on utilise head-wrap (classe .main-circle) */
+.head-wrap .main-circle {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    background-color: #fff;
+    display: block;
+    z-index: 30;
+}
+
+/* Petites pastilles/images autour de la tête (optionnelles) */
+.small-circle {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    border-radius: 45%;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.20);
+    border: 3px solid white;
+    background-color: #fff;
+	z-index: 20;
+}
+
+/* Positions par défaut pour les deux pastilles */
+.small-circle.left {
+    left: -100px;
+    top: 50%;
+    transform: translateY(-50%) rotate(-15deg);
+}
+.small-circle.right {
+    right: -100px;
+    top: 50%;
+    transform: translateY(-50%) rotate(15deg);
+}
+
+/* Assure que les logos restent en arrière si z-index posait problème */
+.logo-left, .logo-right {
+    position: relative;
+    display: flex;
+    z-index: 0;
+}
+
+/* Profil texte (à droite de la tête dans la nouvelle structure) */
+.profile-info {
+    max-width: 60ch;
+    color: #fff;
+}
+.profile-info h1 {
+    margin: 0;
+    font-size: 1.25rem;
+    line-height: 1.1;
+}
+.profile-info .title {
+    margin: 0.25rem 0 0;
+    font-size: 0.95rem;
+    color: #e6f0f4;
+}
+
+/* Sections et contenu principal */
 main {
     margin: 20px;
 }
@@ -49,6 +152,31 @@ ul li {
     padding: 5px 0;
 }
 
+/* Thèse/projets : texte + image à droite */
+.these-flex,
+.projects-flex {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+.these-text,
+.projects-text {
+    flex: 1 1 420px;
+    min-width: 240px;
+}
+
+.these-image img,
+.projects-image img {
+    width: 50%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* Footer */
 footer {
     background-color: #004466;
     color: #fff;
@@ -57,62 +185,33 @@ footer {
     margin-top: 20px;
 }
 
+/* Responsive */
+@media (max-width: 900px) {
+    .these-flex,
+    .projects-flex {
+        flex-direction: column;
+    }
+    .these-image,
+    .projects-image {
+        flex: 1 1 100%;
+    }
+}
+
 @media (max-width: 768px) {
-    body {
-        padding: 10px;
+    body { padding: 10px; }
+    .profile .profile-photo {
+        width: 80px; height: 80px;
+        border-width: 2px;
     }
-
-    .profile-photo {
-        width: 120px;
-        height: 120px;
-    }
-}
-.main-header {
-    display: flex; /* Active l'alignement horizontal */
-    align-items: center; /* Centre verticalement */
-    justify-content: space-between; /* Met de l'espace entre les logos et la photo */
-    background-color: #004466; /* Couleur de fond */
-    color: white; /* Texte blanc */
-    padding: 10px 20px; /* Espacement interne */
+    .logo-left img, .logo-right img { height: 40px; }
+    .head-wrap { width: 120px; height: 120px; flex: 0 0 120px; }
+    .head-wrap .main-circle { width: 90px; height: 90px; }
+    .small-circle { width: 44px; height: 44px; left: -18px; right: -18px; }
 }
 
-/* Zone des photos */
-.profile {
-    display: flex; /* Structure interne horizontalement */
-    flex-direction: column; /* Place photo et texte au-dessus/dessous */
-    align-items: center; /* Centre en horizontal */
-    text-align: center;
-}
-
-.profile-photo {
-    width: 100px; /* Taille de la photo */
-    height: 100px; /* Photo carrée */
-    border-radius: 50%; /* Cercle */
-    border: 2px solid white; /* Bordure blanche */
-    margin-bottom: 5px; /* Espacement entre photo et texte */
-}
-
-/* Logo à gauche et à droite */
-.logo-left img,
-.logo-right img {
-    height: 60px; /* Taille des logos */
-    width: auto; /* Conserve les proportions */
-}
-
-/* Logos sur de plus petits écrans */
-@media (max-width: 768px) {
-    .profile-photo {
-        width: 80px;
-        height: 80px;
-    }
-
-    .logo-left img,
-    .logo-right img {
-        height: 40px; /* Réduction des tailles */
-    }
-}
-
-.title {
-    font-size: 1.2em;
-    margin: 5px 0;
+@media (max-width: 600px) {
+    .small-circle { display: none; } /* masque sur mobiles */
+    .header-center { gap: 0.5rem; flex-direction: column; align-items: center; }
+    .head-wrap { width: 110px; height: 110px; }
+    .head-wrap .main-circle { width: 80px; height: 80px; }
 }

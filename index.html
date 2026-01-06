@@ -3,26 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Page personnelle d'Oriane Dermy - enseignante Chercheuse">
+    <meta name="description" content="Page personnelle d'Oriane Dermy - enseignante chercheuse">
     <title>Dermy Oriane - Enseignante Chercheuse</title>
     <link href="styles.css" rel="stylesheet">
 </head>
 <body>
-    <header class="main-header">
-		   <div class="logo-left">
-        <img src="logo_universite.png" alt="Logo Université">
+   <header class="main-header">
+  <div class="logo-left">
+    <img src="logo_universite.png" alt="Logo Université">
+  </div>
+
+  <div class="header-center">
+    <div class="head-wrap">
+      <img src="ur10e_and_me.png" alt="Photo de profil" class="main-circle">
+      <img src="Tino_and_me.png" alt="Image secondaire gauche" class="small-circle left">
+      <img src="icub_and_me.png" alt="Image secondaire droite" class="small-circle right">
     </div>
-    <div class="profile">
-        <img src="photo.png" alt="Photo de profil" class="profile-photo">
-        <div class="profile-info">
-            <h1>Dr. DERMY Oriane</h1>
-            <p class="title">Enseignante-Chercheuse - Laboratoire Conception Fabrication Commande - Université de Lorraine</p>
-        </div>
+
+    <div class="profile-info">
+      <h1>Dr. DERMY Oriane</h1>
+      <p class="title">Enseignante-Chercheuse</p>
     </div>
-    <div class="logo-right">
-        <img src="logo_labo.png" alt="Logo Labo">
-    </div>
-    </header>
+  </div>
+
+  <div class="logo-right">
+    <img src="logo_labo.png" alt="Logo Labo">
+  </div>
+</header>
 
     <main>
         <section class="about" id="about">
@@ -71,29 +78,22 @@ Nous montrons que le robot peut utiliser l’information redondante provenant de
             
             <ul>
 				<li><a href="https://theses.hal.science/tel-01966873/document" target="_blank">Prédiction du mouvement humain pour la robotique collaborative : du geste accompagné au mouvement corps entier</a>. <em>Université de Lorraine</em>, 2018 <a href="https://youtu.be/RepWOtZ1jhY" target="_blank">[video]</a>
-				<br />
-Cette thèse se situe à l’intersection de l’apprentissage automatique et de la robotique humanoïde, dans la thématique de l’interaction humain-robot, et dans le domaine de la cobotique
-(robotique collaborative). Elle se focalise sur les interactions non verbales humain-robot, en particulier sur l’interaction gestuelle. La prédiction de l’intention, la compréhension et la reproduction
+				<div class="these-image">
+  <img src="illustration_these.png" alt="Illustration thèse">
+</div><br />
+Cette thèse se situe à l’intersection de l’apprentissage automatique et de la robotique humanoïde, dans la thématique de l’interaction humain-robot, et dans le domaine de la cobotique (robotique collaborative). Elle se focalise sur les interactions non verbales humain-robot, en particulier sur l’interaction gestuelle. La prédiction de l’intention, la compréhension et la reproduction
 de gestes sont donc des questions centrales de cette thèse.<br />
-Dans un premier temps, il s’agit de faire apprendre au robot des gestes par démonstration : un utilisateur prend le robot par le bras et lui fait réaliser les gestes à apprendre et ce, plusieurs fois.
-Le robot doit ensuite être capable de reproduire ces différents mouvements tout en les généralisant pour s’adapter au contexte. Pour cela, à l’aide de ses capteurs proprioceptifs, il interprète les
-signaux perçus pour comprendre le mouvement que lui fait réaliser l’utilisateur, afin d’en générer des similaires par la suite. Dans un second temps, le robot apprend à reconnaître l’intention
-de l’humain avec lequel il interagit et cela, à partir des gestes que ce dernier initie : il s’agit ensuite pour le robot de produire les gestes adaptés à la situation et correspondant aux attentes
-de l’utilisateur. Cela nécessite que le robot comprenne la gestuelle de l’utilisateur. Pour cela, différentes modalités perceptives ont été explorées. À l’aide de capteurs proprioceptifs, le robot
-ressent les gestes de l’utilisateur au travers de son propre corps : il s’agit alors d’interaction physique humain-robot. À l’aide de capteurs visuels, le robot interprète le mouvement de la tête de
-l’utilisateur. Enfin, à l’aide de capteurs externes, le robot reconnaît et prédit le mouvement corps entier de l’utilisateur. Dans ce dernier cas, l’utilisateur porte lui-même des capteurs (vêtement
-X-Sens) qui transmettent sa posture au robot. De plus, le couplage de ces modalités a été étudié.<br/>
-D’un point de vue méthodologique, nous venons de voir que les questions d’apprentissage et de reconnaissance de séries temporelles (les gestes) ont été centrales dans cette thèse. Pour cela, deux
-approches ont été développées. La première est fondée sur la modélisation statistique de primitives de mouvements (correspondant aux gestes) : les ProMPs. La seconde,ajoute à la première du Deep
-Learning, par l’utilisation d’auto-encodeurs, afin de modéliser des gestes corps entier contenant beaucoup d’informations, tout en permettant une prédiction en temps réel mou. Lors de cette
-thèse, différents enjeux ont notamment été pris en compte pour la création et le développement de nos méthodes. Ces enjeux concernent : la prédiction des durées des trajectoires, la réduction
+Dans un premier temps, il s’agit de faire apprendre au robot des gestes par démonstration : un utilisateur prend le robot par le bras et lui fait réaliser les gestes à apprendre et ce, plusieurs fois. Le robot doit ensuite être capable de reproduire ces différents mouvements tout en les généralisant pour s’adapter au contexte. Pour cela, à l’aide de ses capteurs proprioceptifs, il interprète les
+signaux perçus pour comprendre le mouvement que lui fait réaliser l’utilisateur, afin d’en générer des similaires par la suite. Dans un second temps, le robot apprend à reconnaître l’intention de l’humain avec lequel il interagit et cela, à partir des gestes que ce dernier initie : il s’agit ensuite pour le robot de produire les gestes adaptés à la situation et correspondant aux attentes
+de l’utilisateur. Cela nécessite que le robot comprenne la gestuelle de l’utilisateur. Pour cela, différentes modalités perceptives ont été explorées. À l’aide de capteurs proprioceptifs, le robot ressent les gestes de l’utilisateur au travers de son propre corps : il s’agit alors d’interaction physique humain-robot. À l’aide de capteurs visuels, le robot interprète le mouvement de la tête de
+l’utilisateur. Enfin, à l’aide de capteurs externes, le robot reconnaît et prédit le mouvement corps entier de l’utilisateur. Dans ce dernier cas, l’utilisateur porte lui-même des capteurs (vêtement X-Sens) qui transmettent sa posture au robot. De plus, le couplage de ces modalités a été étudié.<br/>
+D’un point de vue méthodologique, nous venons de voir que les questions d’apprentissage et de reconnaissance de séries temporelles (les gestes) ont été centrales dans cette thèse. Pour cela, deux approches ont été développées. La première est fondée sur la modélisation statistique de primitives de mouvements (correspondant aux gestes) : les ProMPs. La seconde,ajoute à la première du Deep
+Learning, par l’utilisation d’auto-encodeurs, afin de modéliser des gestes corps entier contenant beaucoup d’informations, tout en permettant une prédiction en temps réel mou. Lors de cette thèse, différents enjeux ont notamment été pris en compte pour la création et le développement de nos méthodes. Ces enjeux concernent : la prédiction des durées des trajectoires, la réduction
 de la charge cognitive et motrice imposée à l’utilisateur, le besoin de rapidité (temps réel mou) et de précision dans les prédictions.<br/>
 <b>Mots-clés : Prédiction, primitives de mouvements, apprentissage automatique, Interaction humain-robot, cobotique.</b>
 				</li>
-			</ul>
+			</ul></div>
           
-        </section>
-
         <section class="experience" id="experience">
             <h2>Expériences</h2>
             <p><strong>LCFC, Equipe Commande, Université de Lorraine, Metz</strong>, Maître de conférences, 2023 - maintenant</p>
