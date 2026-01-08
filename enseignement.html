@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dermy Oriane – À propos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER + MENU chargés dynamiquement -->
+<div id="header-container"></div>
+
+<script>
+fetch("header.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("header-container").innerHTML = html;
+
+    /* BONUS : onglet actif */
+    document.querySelectorAll(".nav-link").forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+<main>
+		<section class="enseignement" id="enseignement">
+			<h2>Enseignement</h2>
+			<h3>IUT informatique, Metz</h3>
+			<p>
+				<b><u>2023 - maintenant : </u></b><br /> 
+				<ul style="list-style-type:circle;">
+					<li><b>Développement Orienté Objets (1e année) :</b> initiation au développement orienté objets. La réalisation d’un développement d’application et l’optimisation des applications informatiques passent par la compréhension des paradigmes objets.</li>
+					<li><b>SAE 2.02 - Exploration algorithmique d’un problème (1e année) :</b> découverte des graphes et utilisation de ces derniers à travers des algorithmes simples et des situations courantes de programmation. Elle permet d’appréhender le concept de graphe d’un point de vue mathématique et algorithmique. Elle présente les problèmes classiques qui font intervenir cette notion et compare les méthodes de résolution usuelles. </li>
+					<li><b>Qualité de développement (1e année) :</b> initiation à la qualité de développement. Familiarisation avec la mécanique de tests, qui est fondamentale à la réalisation d’un développement d’application. Enfin, l’initiation à l’utilisation d’un outil de gestion de version apporte une première mise en pratique des outils de gestion de projet.</li>
+					<li><b>Qualité de développement (2e année) :</b> approfondissement de la production de tests, identification des critères de faisabilité d’un projet informatique.</li>
+					<li><b>Développement Efficace (2e année) :</b> renforcement de l’apprentissage de l’algorithmique afin d’amener vers une efficacité de développement.</li>
+					<li><b>Qualité Algorithmique (3e année) :</b> évaluation de la qualité algorithmique de codes à travers l’utilisation d’outils et de métriques.</li>
+					<li><b>Suivi et évaluation de stages étudiants (toutes les années)</b></li>
+				</ul>
+			</p>
+			
+			<h3>ENIM, Metz</h3>
+			<b><u>2024 - maintenant : </u></b> <br/> 
+			<ul style="list-style-type:circle;">
+					<li><b> Evaluation de stages étudiants.</b></li>
+			</ul>
+			
+			<h3>2015 - 2023 : IDMC et FST à Nancy</h3>
+			<ul style="list-style-type:circle;">
+				<li><b> Algorithme et programmation (FST11 : L2 informatique 6+36h ; IDMC12 : L2 MIASHS13 : 36h*3)</b> : Découverte des arbres binaires, n-aires et leurs différents parcours, récursivité, listes (piles, files), ensemble, etc. Je participe toujours à la correction et à la surveillance des examens.</li>
+				<li><b> Programmation C (FST : L1 informatique : 16 h et L2 : 8h) ;</b></li>
+				<li><b> Base de données (FST : L2 informatique : 10h) ;</b></li>
+				<li><b> Théorie des graphes (FST : L3 informatique : 15h) ;</b></li>
+				<li><b> Web avancé (IDMC : L2 informatique : 18h)</b></li>
+				<li><b> O2I/C2I (FST : L1 en biologie/informatique : 42h) ;</b> </li>
+				<li><b> Robotique : systèmes autonomes et programmation embarqué (IDMC : M2 MIASHS : 10h):</b>	Les objectifs consistaient à posséder les concepts de base pour la compréhension de la complexité relative à l’étude de la cognition sociale en interaction humain-robot, mais aussi de mener une expérience de prototype d’interaction humain-robot avec le robot Pepper ou Nao.</li>
+			</ul>
+			<h2>Encadrement</h2>
+			
+			<h3>Maintenant </h3>
+			<ul style="list-style-type:circle;"><li>[02/2025-07/2025] Aide à l’apprentissage de gestes assistés par ordinateur. Stage de recherche M2, ENIM.</li></ul>
+			
+			<h3>Pendant les post doctorat</h3> 
+			<ul style="list-style-type:circle;"><li>IDMC, MIASHS, 3 étudiants en alternance, L3, 1h/2sem. <br />
+But : projet de recherche consistant à étudier l’état de l’art dans la génération de données synthétiques. Après avoir effectué des recherches bibliographiques, ils doivent maintenant prendre en main différents algorithmes déjà codés et les comparer selon différentes mesures.</li></ul>
+
+			<h3>Pendant la thèse</h3>
+			<ul style="list-style-type:circle;"><li> FST, 2 étudiants, master, 2h/ sem, 6mois.<br />
+But : développer un algorithme pour le robot humanoïde iCub afin que celui-ci puisse, à terme, jouer aux échecs. Les élèves avaient le choix entre s’intéresser à la partie intelligence artificielle (création d’un jeu d’échec simplifié avec l’algorithme MinMax par exemple), à la partie traitement d’image (détection de l’échiquier et des pièce) ou de comprendre comment faire bouger le robot (déplacement du bras à la position souhaitée, et saisie de la pièce). Les élèves se sont focalisés sur la partie traitement d’image.</li></ul>						
+			
+			<h2>Sciences ouvertes</h2>
+			
+			<h3>Initiation à la robotique avec le robot Thymio. <em>Journées des sciences</em>, Loria, 2018-2020</h3>
+		</section>
+
+         </main>
+         </body>
+         </html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dermy Oriane – À propos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER + MENU chargés dynamiquement -->
+<div id="header-container"></div>
+
+<script>
+fetch("header.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("header-container").innerHTML = html;
+
+    /* BONUS : onglet actif */
+    document.querySelectorAll(".nav-link").forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+<main>
+	 <section class="contact" id="contact">
+            <h2>Contact</h2>
+            <p>Email : oriane.dermy_at_univ-lorraine.fr</p>
+            <p><a href="https://www.youtube.com/@orianedermy2430" target="_blank">Youtube</a> | <a href="https://www.linkedin.com/in/oriane-dermy-68828184/" target="_blank">LinkedIn</a></p>
+     </section>
+        
+</main>
+</body>
+</html>

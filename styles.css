@@ -214,4 +214,30 @@ footer {
     .header-center { gap: 0.5rem; flex-direction: column; align-items: center; }
     .head-wrap { width: 110px; height: 110px; }
     .head-wrap .main-circle { width: 80px; height: 80px; }
+}*
+
+
+/*Partie onglet*/
+
+.tabs {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    background-color: #00334d;
+    padding: 10px;
+    flex-wrap: wrap;
 }
+
+.tabs a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 4px;
+    background-color: transparent;
+    transition: background 0.3s;
+}
+
+.tabs a:hover {
+    background-color: #005f80;
+}
+

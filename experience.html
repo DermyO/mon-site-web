@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dermy Oriane – À propos</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER + MENU chargés dynamiquement -->
+<div id="header-container"></div>
+
+<script>
+fetch("header.html")
+  .then(response => response.text())
+  .then(html => {
+    document.getElementById("header-container").innerHTML = html;
+
+    /* BONUS : onglet actif */
+    document.querySelectorAll(".nav-link").forEach(link => {
+      if (link.href === window.location.href) {
+        link.classList.add("active");
+      }
+    });
+  });
+</script>
+
+<main>
+	 <section class="experience" id="experience">
+            <h2>Expériences</h2>
+            <p><strong>LCFC, Equipe Commande, Université de Lorraine, Metz</strong>, Maître de conférences, 2023 - maintenant</p>
+            <p><strong>LORIA, Equipe Bird, Université de Lorraine, Nancy</strong>, Chercheuse Contractuelle, 2019 - 2023</p>
+            <p><strong>INRIA, Equipe Larsen, Université de Lorraine, Nancy</strong>, Doctorat informatique, 2015 - 2018</p>
+            <p><strong>Master Systèmes Intelligents et Communiquants, spé I.A. et robotique, Université de Cergy Pontoise (UCP)</strong>, 2013 - 2015</p>
+            <p><strong>Licence Mathématiques</strong>, 2015</p>
+            <p><strong>Licence Informatique</strong>, 2015</p>
+        </section>
+         </main>
+         </body>
+         </html>
