@@ -169,7 +169,7 @@ ul li {
 
 .these-image img,
 .projects-image img {
-    width: 50%;
+    width: 30%;
     height: auto;
     border-radius: 8px;
     object-fit: cover;
